@@ -12,7 +12,7 @@ node('ben') {
          sh "ls -lah $env.LOS_PATH/$env.LOCAL_MANIFESTS_PATH/"
       }
       stage('RepoSync') { // for display purposes
-         sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; repo sync --no-clone-bundle --force-sync"
+         //sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; repo sync --no-clone-bundle --force-sync"
       }
       stage('Build') { // for display purposes
          sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; source build/envsetup.sh; breakfast $env.DEVICE; brunch $env.DEVICE"
