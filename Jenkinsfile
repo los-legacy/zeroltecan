@@ -1,6 +1,6 @@
 node('ben') {
    withEnv([
-      'DEVICE=zeroltecan', 
+      'DEVICE=zeroltecan',    
       'LOS_PATH=/home/benlue/android/lineage',
       'LOCAL_MANIFESTS_URL=https://raw.githubusercontent.com/los-legacy/local_manifests/lineage-17.1/zero.xml', 
       'LOCAL_MANIFESTS_PATH=.repo/local_manifests', 
