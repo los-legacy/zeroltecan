@@ -15,7 +15,7 @@ node('ben') {
          //sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; repo sync --no-clone-bundle --force-sync"
       }
       stage('Build') { // for display purposes
-         sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; source build/envsetup.sh; breakfast zeroltecan; brunch zeroltecan"
+         sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; source build/envsetup.sh; make clean; breakfast zeroltecan; brunch zeroltecan"
       }
       stage('OTA Upload') { // for display purposes
          echo "Upload"
