@@ -20,7 +20,8 @@ node('ben') {
       stage('Build') { // for display purposes
          //sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; source build/envsetup.sh; make clean; breakfast $env.DEVICE; brunch $env.DEVICE"
          //sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; source build/envsetup.sh; make clean; bash breakfast zeroltecan"
-         sh "cd $env.LOS_PATH;export PATH=~/bin:$PATH;source build/envsetup.sh;make clean;breakfast zeroltecan"
+         //sh "cd $env.LOS_PATH;export PATH=~/bin:$PATH;source build/envsetup.sh;make clean;breakfast zeroltecan"
+         sh label: 'test', script: 'source $env.LOS_PATH/BuildScript.sh'
       }
       stage('OTA Upload') { // for display purposes
          echo "Upload"
