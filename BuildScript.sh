@@ -9,5 +9,5 @@ export CCACHE_COMPRESS=1
 make clean
 ls -lah
 source build/envsetup.sh
-breakfast zeroltecan
-brunch zeroltecan
+#breakfast zeroltecan
+#brunch zeroltecan
