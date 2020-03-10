@@ -3,7 +3,7 @@ node('ben') {
       'DEVICE=zeroltecan',    
       'LOS_PATH=/home/benlue/android/lineage',
       'LOCAL_MANIFESTS_URL=https://raw.githubusercontent.com/los-legacy/local_manifests/lineage-17.1/zero.xml',
-      'BUILD_SCRIPT_URL=https://raw.githubusercontent.com/los-legacy/zeroltecan/lineage-17.1/BuildScript.sh'
+      'BUILD_SCRIPT_URL=https://raw.githubusercontent.com/los-legacy/zeroltecan/lineage-17.1/BuildScript.sh',
       'LOCAL_MANIFESTS_PATH=.repo/local_manifests', 
       'BRANCH=lineage-17.1'
    ]) {
