@@ -19,7 +19,7 @@ node('ben') {
       }
       stage('Build') { // for display purposes
          dir('/home/benlue/android/lineage') {
-         sh'''#!/bin/bash
+         sh''' #!/bin/bash
             export PATH=~/bin:$PATH
             export USE_CCACHE=1
             ccache -M 50G
