@@ -18,10 +18,15 @@ node('ben') {
          //sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; repo sync --no-clone-bundle --force-sync"
       }
       stage('Build') { // for display purposes
-         //sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; source build/envsetup.sh; make clean; breakfast $env.DEVICE; brunch $env.DEVICE"
-         //sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; source build/envsetup.sh; make clean; bash breakfast zeroltecan"
-         //sh "cd $env.LOS_PATH;export PATH=~/bin:$PATH;source build/envsetup.sh;make clean;breakfast zeroltecan"
-         sh label: 'test', script: 'source "$env.LOS_PATH"/build/envsetup.sh'
+         dir('/home/benlue/android/lineage') {
+         sh'''#!/bin/bash
+            export PATH=~/bin:$PATH
+            export USE_CCACHE=1
+            ccache -M 50G
+            export CCACHE_COMPRESS=1
+            make clean;source build/envsetup.sh;breakfast zeroltecan;brunch zeroltecan
+         '''
+         }
       }
       stage('OTA Upload') { // for display purposes
          echo "Upload"
