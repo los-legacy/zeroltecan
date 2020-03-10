@@ -7,4 +7,5 @@ ccache -M 50G
 export CCACHE_COMPRESS=1
 #repo sync --no-clone-bundle --force-sync
 make clean
+ls -lah
 source build/envsetup.sh && breakfast zeroltecan && time brunch zeroltecan
