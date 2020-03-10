@@ -8,6 +8,7 @@ node('ben') {
    ]) {
       stage('Preparation') { // for display purposes
          sh "rm -rf $env.LOS_PATH/$env.LOCAL_MANIFESTS_PATH/*"
+         sh "rm -rf $env.LOS_PATH/BuildScript.sh"
          sh "wget $env.LOCAL_MANIFESTS_URL -O $env.LOS_PATH/$env.LOCAL_MANIFESTS_PATH/zero.xml"
          sh "ls -lah $env.LOS_PATH/$env.LOCAL_MANIFESTS_PATH/"
       }
@@ -15,7 +16,7 @@ node('ben') {
          //sh "cd $env.LOS_PATH; export PATH=~/bin:$PATH; repo sync --no-clone-bundle --force-sync"
       }
       stage('Build') { // for display purposes
-         sh "set -x; cd $env.LOS_PATH; export PATH=~/bin:$PATH; source build/envsetup.sh; make clean; breakfast $env.DEVICE; brunch $env.DEVICE"
+         sh "set -x; cd $env.LOS_PATH; export PATH=~/bin:$PATH; source build/envsetup.sh; make clean; source BuildScript.sh"
       }
       stage('OTA Upload') { // for display purposes
          echo "Upload"
