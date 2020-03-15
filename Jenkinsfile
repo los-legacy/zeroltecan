@@ -99,10 +99,10 @@ node('ben') {
             echo ""
             echo ""
             echo "Veröffentliche Build von heute"
-            echo "cd /opt/lineageos_updater && FLASK_APP=/opt/lineageos_updater/app.py flask addrom --filename ${BRANCH}-$TARGET_DATE-${ROMTYPE}-${DEVICE}.zip --device $DEVICE --version $VERSION --datetime \""$DATETIME"\" --romtype $OTA_ROMTYPE --md5sum $MD5SUM --size "$FILESIZE" --url https://los-legacy.de/${DEVICE}/${BRANCH}-${TARGET_DATE}-${OTA_ROMTYPE}-${DEVICE}.zip"
+            echo "cd /opt/lineageos_updater && FLASK_APP=/opt/lineageos_updater/app.py flask addrom --filename ${BRANCH}-$TARGET_DATE-${ROMTYPE}-${DEVICE}.zip --device $DEVICE --version $VERSION --datetime \""$DATETIME"\" --romtype $OTA_ROMTYPE --md5sum $MD5SUM --size "$FILESIZE" --url https://los-legacy.de/${DEVICE}/${BRANCH}-${TARGET_DATE}-${ROMTYPE}-${DEVICE}.zip"
             NO_SUCCESS=1
                 while [ "$NO_SUCCESS" != "0" ]; do		
-                    ssh $USER@los-legacy.de "cd /opt/lineageos_updater && FLASK_APP=/opt/lineageos_updater/app.py flask addrom --filename ${BRANCH}-$TARGET_DATE-${ROMTYPE}-${DEVICE}.zip --device $DEVICE --version $VERSION --datetime \'"$DATETIME"\' --romtype $OTA_ROMTYPE --md5sum $MD5SUM --size "$FILESIZE" --url https://los-legacy.de/${DEVICE}/${BRANCH}-${TARGET_DATE}-${OTA_ROMTYPE}-${DEVICE}.zip"
+                    ssh $USER@los-legacy.de "cd /opt/lineageos_updater && FLASK_APP=/opt/lineageos_updater/app.py flask addrom --filename ${BRANCH}-$TARGET_DATE-${ROMTYPE}-${DEVICE}.zip --device $DEVICE --version $VERSION --datetime \'"$DATETIME"\' --romtype $OTA_ROMTYPE --md5sum $MD5SUM --size "$FILESIZE" --url https://los-legacy.de/${DEVICE}/${BRANCH}-${TARGET_DATE}-${ROMTYPE}-${DEVICE}.zip"
             NO_SUCCESS=$?;	
             done
         '''
@@ -110,3 +110,4 @@ node('ben') {
         }
     }
 }
+
